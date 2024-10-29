@@ -5,6 +5,6 @@ package by.bondar.HotDog;
  */
 public class MasterDog extends HotDog {
     public MasterDog() {
-        super("Master Dog", 6.0);
+        super("Master Dog", 6.0); // Установка имени и цены хот-дога
     }
 }

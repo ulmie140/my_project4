@@ -19,17 +19,18 @@ class Order {
 
     public void addHotDog(HotDog hotDog) {
         hotDogs.add(hotDog);
-        hotDogTotalPrice += hotDog.getPrice();
+        hotDogTotalPrice += hotDog.getPrice(); // Увеличиваем общую стоимость хот-догов
         System.out.println("Добавлен " + hotDog.getName() + " к заказу. Цена: " + hotDog.getPrice());
     }
 
     public void addComponent(Component component) {
-        componentTotalPrice += component.getPrice();
+        componentTotalPrice += component.getPrice(); // Увеличиваем общую стоимость компонентов
         totalComponentOrders++; // Увеличиваем счетчик заказов компонентов
         System.out.println("Продан " + component.getName() + " отдельно. Цена: " + component.getPrice());
     }
 
     public void finalizeOrder() {
+        // Завершение заказа
         if (!hotDogs.isEmpty()) {
             totalHotDogOrders++;
             totalRevenue += hotDogTotalPrice + componentTotalPrice; // Добавляем цену заказа в общую сумму
@@ -45,19 +46,22 @@ class Order {
             System.out.println("Нет хот-догов или компонентов для завершения заказа.");
         }
     }
+
     public int getTotalHotDogOrders() {
-        return totalHotDogOrders;
+        return totalHotDogOrders; // Получение общего количества заказов с хот-догами
     }
 
     public int getTotalComponentOrders() {
-        return totalComponentOrders;
+        return totalComponentOrders; // Получение общего количества заказов с компонентами
     }
 
     public double getTotalRevenue() {
-        return totalRevenue;
+        return totalRevenue; // Получение общей суммы всех заказов
     }
+
     public double getAverageOrderValue() {
+        // Получение средней стоимости всех заказов
         int totalOrders = totalHotDogOrders + totalComponentOrders;
-        return totalOrders == 0 ? 0 : totalRevenue / totalOrders;
+        return totalOrders == 0 ? 0 : totalRevenue / totalOrders; // Возвращаем среднюю стоимость или 0
     }
 }

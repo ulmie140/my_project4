@@ -5,6 +5,6 @@ package by.bondar.component;
  */
 public class Bun extends Component {
     public Bun() {
-        super("Булка", 1.0);
+        super("Булка", 1.0); // Установка имени и цены булки
     }
 }
