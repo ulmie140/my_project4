@@ -5,6 +5,6 @@ package by.bondar.HotDog;
  */
 public class Berlinka extends HotDog {
     public Berlinka() {
-        super("Berlinka", 4.5);
+        super("Berlinka", 4.5); // Установка имени и цены хот-дога
     }
 }
